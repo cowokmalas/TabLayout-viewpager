@@ -9,6 +9,7 @@ import com.project.mygopek.fragment.LastFragment
 import com.project.mygopek.fragment.SeccondFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+@Suppress("DEPRECATION")
 class MyAdapter(fm: FragmentManager):FragmentPagerAdapter(fm){
 
     private val pages=listOf(
