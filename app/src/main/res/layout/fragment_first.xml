@@ -6,14 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ImageView
-
-        android:id="@+id/icon_Home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_home_white_24dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_grid"
         android:layout_width="match_parent"

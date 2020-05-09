@@ -35,6 +35,7 @@ class FirstFragment : Fragment() {
         grid.addAll(listData)
         rvGrid.setHasFixedSize(true)
         rvGrid.adapter=com.project.mygopek.adapter.GridAdapter(grid)
+
         return view
     }
 
