@@ -8,18 +8,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.project.mygopek.Money
+import com.project.mygopek.data.Money
 import com.project.mygopek.R
-import org.w3c.dom.Text
+import com.project.mygopek.utils.loadImage
+import kotlinx.android.synthetic.main.item_listview.view.*
 
-class ListAdapter (private val list:ArrayList<Money>):RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
+class ListAdapter(private val list: ArrayList<Money>) :
+    RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgPhoto:ImageView=itemView.findViewById(R.id.img_item_photo)
-        val tvName:TextView=itemView.findViewById(R.id.tv_name)
-        val tvDetail:TextView=itemView.findViewById(R.id.tv_detail)
 
-
+        fun bind(money: Money) {
+            itemView.tv_name.text = money.name
+            itemView.tv_detail.text = money.detail
+            itemView.img_item_photo.loadImage(money.photo)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ListViewHolder {
@@ -33,13 +36,6 @@ class ListAdapter (private val list:ArrayList<Money>):RecyclerView.Adapter<ListA
     }
 
     override fun onBindViewHolder(holder: ListAdapter.ListViewHolder, position: Int) {
-        val myMoney = list[position]
-        Glide.with(holder.itemView.context)
-            .load(myMoney.photo)
-            .apply(RequestOptions().override(55, 55))
-            .into(holder.imgPhoto)
-        holder.tvName.text = myMoney.name
-        holder.tvDetail.text = myMoney.detail
-
+        holder.bind(list[position])
     }
 }
