@@ -1,4 +1,6 @@
-package com.project.mygopek
+package com.project.mygopek.data
+
+import com.project.mygopek.R
 
 object DataMoney {
     private val moneyNames = arrayOf(
@@ -41,15 +43,17 @@ object DataMoney {
         R.drawable.timorleste
     )
     val listData: ArrayList<Money>
-    get() {
-        val list = arrayListOf<Money>()
-        for (position in moneyNames.indices) {
-            val money = Money()
-            money.name = moneyNames[position]
-            money.detail= moneyDetails[position]
-            money.photo= moneyImages[position]
-            list.add(money)
+        get() {
+            val list = arrayListOf<Money>()
+            for (position in moneyNames.indices) {
+                val money = Money(
+                    moneyNames[position],
+                    moneyDetails[position],
+                    moneyImages[position]
+                )
+
+                list.add(money)
+            }
+            return list
         }
-        return list
-    }
 }
