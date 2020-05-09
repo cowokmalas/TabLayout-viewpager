@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.mygopek.DataMoney
-import com.project.mygopek.Money
+import com.project.mygopek.domain.DataMoney
+import com.project.mygopek.domain.Money
 
 import com.project.mygopek.R
 
@@ -17,7 +17,6 @@ import com.project.mygopek.R
  * A simple [Fragment] subclass.
  */
 class LastFragment : Fragment() {
-
     private lateinit var listview: RecyclerView
     private var list:ArrayList<Money> = ArrayList()
     override fun onCreateView(

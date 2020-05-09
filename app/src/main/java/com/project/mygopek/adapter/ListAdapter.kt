@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.project.mygopek.Money
 import com.project.mygopek.R
-import org.w3c.dom.Text
+import com.project.mygopek.domain.Money
 
 class ListAdapter (private val list:ArrayList<Money>):RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 

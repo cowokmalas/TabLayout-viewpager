@@ -6,16 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.project.mygopek.DataMoney.listData
-import com.project.mygopek.Money
+import com.project.mygopek.domain.DataMoney.listData
+import com.project.mygopek.domain.Money
 
 import com.project.mygopek.R
-import kotlinx.android.synthetic.main.item_gridview.*
 
 /**
  * A simple [Fragment] subclass.
@@ -35,7 +31,6 @@ class FirstFragment : Fragment() {
         grid.addAll(listData)
         rvGrid.setHasFixedSize(true)
         rvGrid.adapter=com.project.mygopek.adapter.GridAdapter(grid)
-
         return view
     }
 
