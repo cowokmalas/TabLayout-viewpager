@@ -27,7 +27,7 @@ class CardViewAdapter (private val listMoney:ArrayList<Money>): RecyclerView.Ada
         parent: ViewGroup,
         viewType: Int
     ): CardViewAdapter.CardViewHolder {
-        val view:View=LayoutInflater.from(parent.context).inflate(R.layout.fragment_seccond,parent,false)
+        val view:View=LayoutInflater.from(parent.context).inflate(R.layout.item_cardview,parent,false)
         return CardViewHolder(view)
     }
 

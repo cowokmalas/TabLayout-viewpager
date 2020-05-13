@@ -22,8 +22,8 @@ import com.project.mygopek.domain.Money
  * A simple [Fragment] subclass.
  */
 class SeccondFragment() : Fragment() {
-    private lateinit var cardView:RecyclerView
-    private val cardList:ArrayList<Money> = ArrayList()
+    private lateinit var cardView: RecyclerView
+    private val cardList: ArrayList<Money> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,14 +31,14 @@ class SeccondFragment() : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val view= inflater.inflate(R.layout.fragment_seccond, container, false)
-        cardView=view.findViewById(R.id.rv_cardview)
-        cardView.layoutManager=LinearLayoutManager(activity)
+        val view = inflater.inflate(R.layout.fragment_seccond, container, false)
+        cardView = view.findViewById(R.id.rv_cardview)
+        cardView.layoutManager = LinearLayoutManager(activity)
         cardView.setHasFixedSize(true)
         cardList.addAll(listData)
-       /* val cardViewAdapter= CardViewAdapter(cardList)
-          cardView.adapter=cardViewAdapter
-        */
+        val cardViewAdapter = CardViewAdapter(cardList)
+        cardView.adapter = cardViewAdapter
+
 
         return view
     }
